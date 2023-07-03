@@ -7,7 +7,7 @@ import pl.agh.edu.dp.factory.EnchantedMazeFactory;
 public class Main {
 
     public static void main(String[] args) {
-        MazeGame mazeGame = new MazeGame(new StandardBuilderMaze(), new EnchantedMazeFactory());
+        MazeGame mazeGame = new MazeGame(new StandardBuilderMaze(), EnchantedMazeFactory.getInstance());
         mazeGame.run();
     }
 }

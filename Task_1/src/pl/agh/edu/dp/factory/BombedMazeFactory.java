@@ -7,6 +7,8 @@ import pl.agh.edu.dp.labirynth.entities.room.Room;
 import pl.agh.edu.dp.labirynth.entities.wall.Wall;
 
 public class BombedMazeFactory implements MazeFactory {
+    public static BombedMazeFactory instance;
+
     @Override
     public Room createRoom(int n) {
         return new BombedRoom(n);
@@ -20,5 +22,11 @@ public class BombedMazeFactory implements MazeFactory {
     @Override
     public Door createDoor(Room r1, Room r2) {
         return new BombedDoor(r1, r2);
+    }
+
+    public static BombedMazeFactory getInstance(){
+        if (instance == null){
+            return new BombedMazeFactory();
+        } return instance;
     }
 }

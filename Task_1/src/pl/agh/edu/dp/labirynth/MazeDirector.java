@@ -1,10 +1,12 @@
 package pl.agh.edu.dp.labirynth;
 
 import pl.agh.edu.dp.builder.MazeBuilder;
+import pl.agh.edu.dp.factory.BombedMazeFactory;
 import pl.agh.edu.dp.labirynth.entities.room.Room;
 import pl.agh.edu.dp.labirynth.entities.wall.Wall;
 import pl.agh.edu.dp.factory.MazeFactory;
 import pl.agh.edu.dp.labirynth.entities.Direction;
+import pl.agh.edu.dp.factory.EnchantedMazeFactory;
 
 public class MazeDirector {
     MazeFactory factory;
@@ -44,5 +46,17 @@ public class MazeDirector {
 
         System.out.println("Created a maze, rooms number: "+builder.getMaze().getRoomsNumber());
         return builder.getMaze();
+    }
+
+    public void checkSingletons() {
+        MazeFactory enchFact1 = EnchantedMazeFactory.getInstance();
+        MazeFactory enchFact2 = EnchantedMazeFactory.getInstance();
+
+        MazeFactory bombFact1 = BombedMazeFactory.getInstance();
+        MazeFactory bombFact2 = BombedMazeFactory.getInstance();
+
+        if (enchFact1.equals(enchFact2) && bombFact1.equals(bombFact2)){
+            System.out.println("it is singleton");
+        }
     }
 }

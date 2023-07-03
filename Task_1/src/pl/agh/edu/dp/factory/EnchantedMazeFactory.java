@@ -7,6 +7,8 @@ import pl.agh.edu.dp.labirynth.entities.room.Room;
 import pl.agh.edu.dp.labirynth.entities.wall.Wall;
 
 public class EnchantedMazeFactory implements MazeFactory {
+    public static EnchantedMazeFactory instance;
+
     @Override
     public Room createRoom(int n) {
         return new EnchantedRoom(n);
@@ -20,5 +22,11 @@ public class EnchantedMazeFactory implements MazeFactory {
     @Override
     public Door createDoor(Room r1, Room r2) {
         return new EnchantedDoor(r1, r2);
+    }
+
+    public static EnchantedMazeFactory getInstance(){
+        if (instance == null){
+            return new EnchantedMazeFactory();
+        } return instance;
     }
 }

@@ -61,12 +61,12 @@ public class MazeGame {
             }
 
             if (!player.isAlive()){
-                System.out.println("you lost");
+                System.out.println("!!! YOU LOST !!!");
                 break;
             }
 
             if (player.getRoom().equals(endRoom)){
-                System.out.println("you won");
+                System.out.println("!!! YOU WON !!!");
                 break;
             }
         }

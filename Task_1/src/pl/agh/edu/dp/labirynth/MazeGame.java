@@ -1,20 +1,22 @@
 package pl.agh.edu.dp.labirynth;
 
-import pl.agh.edu.dp.labirynth.builder.MazeBuilder;
-import pl.agh.edu.dp.labirynth.factory.MazeFactory;
+import pl.agh.edu.dp.builder.MazeBuilder;
+import pl.agh.edu.dp.labirynth.entities.room.Room;
+import pl.agh.edu.dp.factory.MazeFactory;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class MazeGame {
-    MazeBuilder builder;
-    MazeFactory factory;
-    Maze maze;
+    private MazeBuilder builder;
+    private MazeFactory factory;
+    private Maze maze;
+    private Player player;
 
     public MazeGame(MazeBuilder builder, MazeFactory factory){
         this.builder = builder;
         this.factory = factory;
         this.maze = createMaze();
+        this.player = new Player();
     }
     public Maze createMaze() {
         MazeDirector director = new MazeDirector(factory, builder);
@@ -25,23 +27,27 @@ public class MazeGame {
         Scanner scanner = new Scanner(System.in);
         String input = "_";
 
+        Room startRoom = maze.getStartRoom();
+        Room endRoom = maze.getEndRoom();
+        player.setRoom(startRoom);
+
         while (!input.equals("q")){
             input = scanner.nextLine();
             switch (input){
                 case "w": {
-                    System.out.println("Moved North");
+                    player.moveUp();
                     break;
                 }
                 case "s": {
-                    System.out.println("Moved South");
+                    player.moveDown();
                     break;
                 }
                 case "a": {
-                    System.out.println("Moved West");
+                    player.moveLeft();
                     break;
                 }
                 case "d": {
-                    System.out.println("Moved East");
+                    player.moveRight();
                     break;
                 }
                 case "q": {
@@ -52,7 +58,16 @@ public class MazeGame {
                     System.out.println("Wrong Input!");
                     break;
                 }
+            }
 
+            if (!player.isAlive()){
+                System.out.println("you lost");
+                break;
+            }
+
+            if (player.getRoom().equals(endRoom)){
+                System.out.println("you won");
+                break;
             }
         }
     }

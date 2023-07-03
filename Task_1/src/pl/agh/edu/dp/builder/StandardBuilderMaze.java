@@ -1,10 +1,10 @@
-package pl.agh.edu.dp.labirynth.builder;
+package pl.agh.edu.dp.builder;
 
-import pl.agh.edu.dp.labirynth.components.Direction;
+import pl.agh.edu.dp.labirynth.entities.Direction;
 import pl.agh.edu.dp.labirynth.Maze;
-import pl.agh.edu.dp.labirynth.components.door.Door;
-import pl.agh.edu.dp.labirynth.components.room.Room;
-import pl.agh.edu.dp.labirynth.components.wall.Wall;
+import pl.agh.edu.dp.labirynth.entities.door.Door;
+import pl.agh.edu.dp.labirynth.entities.room.Room;
+import pl.agh.edu.dp.labirynth.entities.wall.Wall;
 
 public class StandardBuilderMaze implements MazeBuilder {
 

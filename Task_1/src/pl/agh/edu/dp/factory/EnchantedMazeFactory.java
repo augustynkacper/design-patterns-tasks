@@ -1,10 +1,10 @@
-package pl.agh.edu.dp.labirynth.factory;
+package pl.agh.edu.dp.factory;
 
-import pl.agh.edu.dp.labirynth.components.door.Door;
-import pl.agh.edu.dp.labirynth.components.door.EnchantedDoor;
-import pl.agh.edu.dp.labirynth.components.room.EnchantedRoom;
-import pl.agh.edu.dp.labirynth.components.room.Room;
-import pl.agh.edu.dp.labirynth.components.wall.Wall;
+import pl.agh.edu.dp.labirynth.entities.door.Door;
+import pl.agh.edu.dp.labirynth.entities.door.EnchantedDoor;
+import pl.agh.edu.dp.labirynth.entities.room.EnchantedRoom;
+import pl.agh.edu.dp.labirynth.entities.room.Room;
+import pl.agh.edu.dp.labirynth.entities.wall.Wall;
 
 public class EnchantedMazeFactory implements MazeFactory {
     @Override

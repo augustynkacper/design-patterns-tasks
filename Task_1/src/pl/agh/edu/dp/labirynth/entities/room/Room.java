@@ -1,7 +1,8 @@
-package pl.agh.edu.dp.labirynth.components.room;
+package pl.agh.edu.dp.labirynth.entities.room;
 
-import pl.agh.edu.dp.labirynth.components.Direction;
-import pl.agh.edu.dp.labirynth.components.MapSite;
+import pl.agh.edu.dp.labirynth.Player;
+import pl.agh.edu.dp.labirynth.entities.Direction;
+import pl.agh.edu.dp.labirynth.entities.MapSite;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -36,7 +37,8 @@ public class Room extends MapSite
     }
 
     @Override
-    public void Enter(){
-
+    public void Enter(Player player){
+        player.setRoom(this);
+        //System.out.println("entered a new room");
     }
 }

@@ -1,6 +1,6 @@
 package pl.agh.edu.dp.labirynth;
 
-import pl.agh.edu.dp.labirynth.components.room.Room;
+import pl.agh.edu.dp.labirynth.entities.room.Room;
 
 import java.util.Vector;
 
@@ -27,4 +27,20 @@ public class Maze {
     }
 
     public boolean isEndRoom(int n) {return n==rooms.size();}
+
+    public Room getStartRoom(){
+        for(Room r: rooms){
+            if (r.getRoomNumber()==1) return r;
+        }
+        return null;
+    }
+
+    public Room getEndRoom(){
+        for(Room r: rooms){
+            if (r.getRoomNumber()==rooms.size()){
+                return r;
+            }
+        }
+        return null;
+    }
 }

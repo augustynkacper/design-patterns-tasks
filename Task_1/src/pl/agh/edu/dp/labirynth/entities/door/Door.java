@@ -1,8 +1,9 @@
-package pl.agh.edu.dp.labirynth.components.door;
+package pl.agh.edu.dp.labirynth.entities.door;
 
-import pl.agh.edu.dp.labirynth.components.Direction;
-import pl.agh.edu.dp.labirynth.components.MapSite;
-import pl.agh.edu.dp.labirynth.components.room.Room;
+import pl.agh.edu.dp.labirynth.Player;
+import pl.agh.edu.dp.labirynth.entities.Direction;
+import pl.agh.edu.dp.labirynth.entities.MapSite;
+import pl.agh.edu.dp.labirynth.entities.room.Room;
 
 public class Door extends MapSite {
     private Room room1;
@@ -15,8 +16,13 @@ public class Door extends MapSite {
 
 
     @Override
-    public void Enter(){
-
+    public void Enter(Player player){
+        if (player.getRoom().equals(room1)){
+            room2.Enter(player);
+        } else{
+            room1.Enter(player);
+        }
+        //System.out.println("entered the door");
     }
 
     public Direction getCommonDirection(){

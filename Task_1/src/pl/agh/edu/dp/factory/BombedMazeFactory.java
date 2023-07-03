@@ -1,10 +1,10 @@
-package pl.agh.edu.dp.labirynth.factory;
+package pl.agh.edu.dp.factory;
 
-import pl.agh.edu.dp.labirynth.components.door.BombedDoor;
-import pl.agh.edu.dp.labirynth.components.door.Door;
-import pl.agh.edu.dp.labirynth.components.room.BombedRoom;
-import pl.agh.edu.dp.labirynth.components.room.Room;
-import pl.agh.edu.dp.labirynth.components.wall.Wall;
+import pl.agh.edu.dp.labirynth.entities.door.BombedDoor;
+import pl.agh.edu.dp.labirynth.entities.door.Door;
+import pl.agh.edu.dp.labirynth.entities.room.BombedRoom;
+import pl.agh.edu.dp.labirynth.entities.room.Room;
+import pl.agh.edu.dp.labirynth.entities.wall.Wall;
 
 public class BombedMazeFactory implements MazeFactory {
     @Override

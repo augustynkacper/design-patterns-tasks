@@ -1,10 +1,10 @@
 package pl.agh.edu.dp.labirynth;
 
-import pl.agh.edu.dp.labirynth.builder.MazeBuilder;
-import pl.agh.edu.dp.labirynth.components.room.Room;
-import pl.agh.edu.dp.labirynth.components.wall.Wall;
-import pl.agh.edu.dp.labirynth.factory.MazeFactory;
-import pl.agh.edu.dp.labirynth.components.Direction;
+import pl.agh.edu.dp.builder.MazeBuilder;
+import pl.agh.edu.dp.labirynth.entities.room.Room;
+import pl.agh.edu.dp.labirynth.entities.wall.Wall;
+import pl.agh.edu.dp.factory.MazeFactory;
+import pl.agh.edu.dp.labirynth.entities.Direction;
 
 public class MazeDirector {
     MazeFactory factory;

@@ -1,4 +1,4 @@
-package pl.agh.edu.dp.labirynth.components;
+package pl.agh.edu.dp.labirynth.entities;
 
 public enum Direction {
     North, South, East, West;

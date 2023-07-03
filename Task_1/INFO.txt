@@ -1,0 +1,4 @@
+EnchantedRoom, EnchantedDoor - przejscie/wejscie do nich powoduje dodanie
+    lub odjecie losowej ilosci zycia z danego przedzialu
+BombedRoom, BombedDoor - odjecie losowej ilosci zycia z danego przedzialu
+BombedWall - wejscie w nia powoduje koniec gry
